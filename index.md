@@ -14,19 +14,20 @@ Tolulope is the best
 For this project, I explored what a good analytics PowerPoint presentation should entail. It talks about main talking points, how to tie data to the business value, and much more. 
 
 ---
-#### [External Link Project](https://www.linkedin.com/pulse/what-i-learned-21-days-data-avery-smith)
-[<img src="images/21 Days To Data Challenge What I've Learned Cover.png?raw=true"/>](https://www.linkedin.com/pulse/what-i-learned-21-days-data-avery-smith)
-My final write up for Avery Smith's 21 Days To Data project covering New York City crime data. 
+#### [Excel - DoorDash Project](https://www.linkedin.com/pulse/from-budget-bites-gourmet-orders-income-trends-doordash-megan-easton-12sae/?trackingId=YiSnGoQeR6Oh3YIsClT1CQ%3D%3D)
+[<img src="images/Blue Modern Minimalist Simple Article LinkedIn Sponsored Content excel.png"/>](https://www.linkedin.com/pulse/from-budget-bites-gourmet-orders-income-trends-doordash-megan-easton-12sae/?trackingId=YiSnGoQeR6Oh3YIsClT1CQ%3D%3D)
+In this case study from Data Analytics Accelerator, I was prompted to analyze iFood (Brazilian DoorDash) consumer data. The main focuses were:
 
 
 ---
-#### [Education Project](https://www.linkedin.com/pulse/massachusetts-education-analysis-samantha-paul/)
-[<img src="images/21 Days To Data Challenge What I've Learned Cover.png?raw=true"/>](https://www.linkedin.com/pulse/what-i-learned-21-days-data-avery-smith)
+#### [Tableau - Education Project](https://www.linkedin.com/pulse/beyond-spreadsheet-how-tableau-illuminates-education-data-easton-g4fge/?trackingId=INB8PW4ZQQqJIzGqfQDvoA%3D%3D)
+[<img src="images/Blue Modern Minimalist Simple Article LinkedIn Sponsored Content.png"/>](https://www.linkedin.com/pulse/beyond-spreadsheet-how-tableau-illuminates-education-data-easton-g4fge/?trackingId=INB8PW4ZQQqJIzGqfQDvoA%3D%3D)
 In this case study from Data Analytics Accelerator, I was prompted to analyze the State of Massachusetts education data. The main focuses were:
-What schools are struggling the most?
 How does class size affect college admission?
 What are the top math schools in the state? 
+What schools are struggling the most?
 
+##### Prefer to watch? Click [here](https://www.loom.com/share/ae9dd88d60874f509d0725108533caa6?sid=0a9256b5-1dec-4b51-a6b3-e5e896379737)
 ---
 
 ### Category Name 2
