@@ -6,7 +6,11 @@
 
 #### [SQL - Banking Project](/bank.md)
 [<img src="images/Blue Modern Minimalist Simple Article LinkedIn Sponsored Contentsql .png">](https://www.linkedin.com/pulse/exploring-world-banking-data-bank-insights-sql-megan-easton-qe2re?)
-In this project from the Data Analytics Accelerator (DAA), I was prompted to analyze the banking data from World Bank using SQL. 
+In this project from the Data Analytics Accelerator (DAA), I was prompted to analyze banking data from the World Bank's IDA program using SQL. I answered: How many loans does each country have?
+What is the most expensive project?
+Which countries have the highest service charge rate?
+What is the most common credit status?
+Which countries have the highest amount of cancelled debt?
 
 #### [Tableau - Education Project](https://www.linkedin.com/pulse/beyond-spreadsheet-how-tableau-illuminates-education-data-easton-g4fge/?trackingId=INB8PW4ZQQqJIzGqfQDvoA%3D%3D) 
 [<img src="images/Blue Modern Minimalist Simple Article LinkedIn Sponsored Content.png"/>](https://www.linkedin.com/pulse/beyond-spreadsheet-how-tableau-illuminates-education-data-easton-g4fge/?trackingId=INB8PW4ZQQqJIzGqfQDvoA%3D%3D)
