@@ -1,79 +1,85 @@
-[<img src="images/Blue Modern Minimalist Simple Article LinkedIn Sponsored Contentsql .png"/>](https://www.linkedin.com/pulse/exploring-world-banking-data-bank-insights-sql-megan-easton-qe2re/)
-# Exploring the World of Banking Data: The World Bank Insights with SQL
+[<img src="images/sql 2 image.png"/>](https://www.linkedin.com/pulse/exploring-hospital-data-sql-relationships-between-los-megan-easton-ommue/?trackingId=WdjrS%2Fd2myKqkzeh4fgL9Q%3D%3D)
+# Exploring Hospital Data with SQL: Relationships Between LOS, Procedures, and Demographics
 
 
-When I came to this project in the Data Career Jumpstart's Data Analytics Accelerator, I felt a little more excited for this project than previous ones for two reasons: (1) I already had some experience with SQL (_and loved it_), and (2) I've been working in banking for almost six years, and was excited to see what banking data **actually** looked like. For this project, data came from the World Bank's International Development Association (IDA), which provides grants and low-interest loans to help countries invest in their futures, improve lives, and create safer, more prosperous communities around the world. I used [csvfiddle](https://csvfiddle.io) to run my queries.
+Welcome to my next data project! We're back at it again with SQL, but analyzing hospital data this time. As you _may_ know by now, I am a SQL lover-girl, so it was exciting to get to continue using a tool I enjoy. But looking at data from the healthcare industry adds another layer to the analysis, since I think the importance of healthcare access and affordability **cannot** be stated enough. Hospitals themselves face many challenges, including ensuring quality of care, managing costs, and managing hospital resources. Understanding factors like readmittance rates or the average length of stay (LOS) can help them make better decisions to provide better, more cost-effective care. 
 
 <br>
+In this article, I’ll share some key findings from my analysis of hospital data. You’ll learn about the relationships between the number of procedures, length of stay, and readmittance rates, and how these vary across demographic groups.
+<br>
 
-
-#### Questions to Answer
-1. How many loans does each country have?
-2. What is the most expensive project?
-3. Which countries have the highest service charge rate?
-4. What is the most common credit status?
-5. Which countries have the highest amount of cancelled debt?
-
-#### Dataset Details
-For my analysis, I used a dataset sourced from the World Bank, which contained 1.4 million rows and 30 columns of data. This dataset was as of May 31, 2025, and included typical lending information such as the country, borrower details, disbursement information, and various status indicators. The size and detail of this dataset made it a perfect fit for my exploratory analysis, and was great for using SQL (as opposed to Excel) based on its size. The dataset can be found [here.](https://financesone.worldbank.org/ida-statement-of-credits-grants-and-guarantees-historical-data/DS00976)
+#### About the Data
+For my analysis, I used a dataset from Kaggle that consisted of two tables: One table held demographic information, while the other contained data on patients’ hospital stays including the LOS, number of procedures, readmittance, and more. The dataset is comprised of 51 columns and (as revealed by an initial COUNT(*) query) 101,766 rows, making it rich with information for analysis. The dataset can be found [here.](https://www.kaggle.com/code/iabhishekofficial/prediction-on-hospital-readmission/data?select=diabetic_data.csv)
 
 ---
 
 ## Analysis
-Since this dataset was too large to be imported to Excel, I didn't have an opportunity to really clean the data as I would have liked. So I started with a limited "SELECT *" statement to get a feel for the data. This revealed that there were numerous row entries bearing the same loan ID, but with different dates (usually once a month, and presumably regular payments or updates). As a result, in many of my queries I used the DISTINCT operator to try to only have one entry per loan ID. Because of the use of DISTINCT, you will also see many AVG operators as well. Once I had this down, I was able to really get into the data.
+One key factor hospitals may look at for insights into the quality of patient care is the amount of time a patient spent in the hospital. To visualize the average amount of time each patient spent in the hospital, I created a histogram. 
 <br><br>
-The first query I ran was a simple Count, to figure out the number of rows. <br><br>
-<img src="images/Big Count Cod.png"/> <br><br>
-Which returned this result:
+<img src="images/histogram code.png"/> <br><br>
+Which yielded this, where each * equals 100 patients:
 <br><br>
-<img src="images/Big Count Result.png">
+<img src="images/histogram result.png">
 <br><br>
-This also served to reinforce that the use of the DISTINCT operator would be important throughout.
+From this visual, it is clearly evident that most patients are staying 1-4 days in the hospital, with 3 days as the most common. Generally, patients would prefer to get out of the hospital faster so this could be a good result. Also, as one patient leaves the hospital, this opens up space for another individual to be cared for, so a quicker turnaround rate can yield more patients being seen. However, hospitals would need to be very intentional to make sure they are not discharging patients prematurely, as this could lead to poorer health outcomes for the patient and could potentially lead to the patient's readmission to the hospital.
 <br><br>
-Then I dove right in to determining the answer to my first question - how many loans does each country have? <br><br>
-<img src="images/loans by country & commitment code.png"> <br><br>
+Next, I looked at which medical specialties have the most procedures, since procedures can be costly for both the patient and the hospital: <br><br>
+<img src="images/top proc code.png"> <br><br>
 Which returned the following: <br><br>
-<img src="images/loans by country & commitment result.png"> <br><br>
-<img src="images/loans by country bottom.png"> <br><br>
-This query returned a total of 143 rows, and showed that India had 442 loans with World Bank's IDA program and an average loan commitment of $117,488,661!! Bangladesh had the next highest number of unique loan IDs, but Ethiopia had the next highest average loan commitment. Multiple countries/economies had only one loan, but St. Kitts and Nevis had the smallest amount at $1.5 million.
+<img src="images/top proc result.png"> <br><br>
+I filtered the data to only include specialties with a total number of procedures above 50 to make sure the sample size of each specialty was appropriate. This revealed that thoracic surgery had the highest average number of procedures per patient, but there were the highest number of cardiology procedures overall. I chose not to investigate further with medical specialties, but if one wanted to look further I would also want to consider: (1) How do surgical vs. non-surgical specialties compare? (2) Which specialties have longer LOS? (3) Are certain medical specialities more likely to have a patient be readmitted?
 <br><br>
-Next, I looked into the various projects, limiting the results to the top 5: <br><br>
-<img src="images/project code.png"><br><br>
-Which returned this: <br><br>
-<img src="images/project result.png"><br><br>
-The PEACE in Ukraine project had the most borrowed funds out of all of them, with _**$1,618,604,651**_, followed by Padma Bridge. Numbers 3 and 4 appeared to be the same project - National Rural Livelihoods in India - just with a slight variation in the project name, and fifth was Nigeria's National Social Safety Net Program. <br><br>
-Then I looked into which countries had the highest service charge, also limited to the top 5: <br><br>
-<img src="images/SERVICE CHARGE CODE.png"><br><br>
-Which returned the following:<br><br>
-<img src="images/service charge result.png"><br><br>
-St. Kitts and Nevis, which you'll remember had the **smallest** average loan amount, had the **highest** average service charge by far! The next three results were Macedonia (another duplicate) and North Macedonia, and fifth was Albania.
-<br><br>
-Next, I worked on determining the distribution of credit statuses:<br><br>
-<img src="images/sort by credit status code.png"><br><br>
-Which returned:<br><br>
-<img src="images/sort by credit status result.png"><br><br>
-This showed that most loans' credit statuses were either disbursing (in the process of funds being distributed to the borrower, possibly over a period of time), repaying (funds being repaid to the lender), or disbursed (funds fully sent to the borrower, but not yet repaying). It does seem like there may be some duplicate credit statuses here - is there a difference between disbursed and fully disbursed? Fully repaid and repaid? I am not familiar with the inner workings of World Bank, so I can't be sure, but I would recommend consolidating credit statuses if possible.<br><br>
-Finally, I looked into countries with the most cancelled debt, but from two angles - (1) the highest USD amount of cancelled debt and (2) the highest number of cancelled loan IDs. First is the highest amount of cancelled debt:<br><br>
-<img src="images/country $ cancelled code.png"><br><br>Which gave us:<br><br>
-<img src="images/country $ cancelled result.png"><br><br>
-This revealed that India had $13,705,173,117 in cancelled debt. Please note that this number is a SUM function, rather than an AVG like I have been using for many of my queries.<br><br>
-Next, looking at the highest number of cancelled loans:<br><br>
-<img src="images/country num cancelled code.png"><br><br>
-Which returned:<br><br>
-<img src="images/country by num cancelled result.png"><br><br>
-For this, I used a CASE operator to effectively count the number of entries for each country with the credit status as Fully Cancelled or Cancelled. This does contain the duplicate Loan ID entries, so I view these as percentages more than hard numbers. Of 1,432,916 total rows, 2,341 or 0.16% of those were cancelled loans from Pakistan. Interestingly, India is not in the top 16 results for the highest number of cancelled loans, despite having the highest sum of cancelled debt. But since India also has the highest average dollar amount per loan ID, it likely needs fewer cancelled loans to rack up a higher amount of cancelled dollars. <br>
+I then moved on to see if there was a correlation between the number of lab procedures a patient has and their average LOS. First, I looked at some aggregate functions of the number of lab procedures to determine the range of results: <br><br>
+<img src="images/establishing range code.png"><br><br>
+<img src="images/establishing range result.png"><br><br>
+I used the results to help determine my parameters for my CASE WHEN statement in the next query: <br><br>
+<img src="images/lab proc freq code.png"><br><br>
+Which showed this: <br><br>
+<img src="images/lab proc freq result.png"><br><br>
+This revealed that, yes, there is a correlation between the amount of lab procedures a patient receives and the amount of time they are admitted to the hospital. Based on the data, you can't determine causality, but you can at least see that a relationship exists.<br><br>
+This result prompted me to look a little deeper - how do LOS, procedures, and medications vary across demographic groups? Do they have any relation to being readmitted to the hospital? To look into this, I created two tables to look at how these changed across races and age groups:<br><br>
+<img src="images/big table code.png"><br><br>
+Which returned:
+<br><br><img src="images/big table result.png"><br><br>
+A second table was made using very similar code, but displaying and grouped by age instead:<br><br>
+<img src="images/big table age result.png"><br><br>
+In these results some correlations presented themselves, but I decided each table needed to be split up to look at fewer factors and to get a more clear view of their relationships. So I made a total of four tables - procedures grouped by race and age, and readmission status also grouped by race and age. Here is the code for looking at procedures:<br><br>
+<img src="images/race procedure code.png"><br><br>
+Which gave:<br><br>
+<img src="images/race procedure result.png"><br><br>
+And the following, when grouped by age:<br><br>
+<img src="images/age procedures result.png"><br><br>
+In these two tables we can see a couple interesting things:
+- African American patients had the longest average LOS and highest average number of lab procedures, but second lowest number of procedures.
+- Asian patients had the shortest average LOS, as well as the fewest average lab procedures and fewest average medications.
+- Generally, the older you are, the longer your hospital stay. The only exception was that patients aged 80-90 stayed longer than those aged 90-100.
+- When grouped by age, the number of procedures and number of medications have a bell curve, with people in middle age groups receiving the highest average amount of procedures and medications.
+- The number of lab procedures seems to be pretty similar among all age groups, but younger age groups do receive slightly fewer lab procedures on average.
+- Overall, patient groups with longer LOS tended to have more lab procedures and medications, but the number of procedures was less consistent.<br><br>
+Next, looking at the tables focusing on readmission:<br><br>
+<img src="images/age readmitted code.png"><br><br>
+Which yielded:<br><br>
+<img src="images/Age readmitted result.png"><br><br>
+And the following, when grouped by race:<br><br>
+<img src="images/race readmitted rsult.png">
+From these two tables I was able to make some more observations:<br><br>
+  <LI>Younger age groups generally have a higher percentage of patients not readmitted, but they also have a smaller sample size compared to middle and older age groups.</LI>
+  <LI>Patients aged 20-30 had the highest percentage readmitted within 30 days, and patients aged 80-90 had the highest percentage readmitted after 30 days.</LI>
+  <LI>Caucasian patients had the highest percentage readmitted (both within 30 days and after 30 days), as well as the largest sample size</LI>
+<LI>Asian patients had the highest percentage not readmitted, as well as the second lowest percentage readmitted within 30 days and lowest percentage readmitted after 30 days. They were also the smallest sample size.</LI>
+<LI>When grouped by race, patients who stayed longer had a higher likelihood of being readmitted. However, this could be a sample size issue as larger sample sizes had longer LOS and a higher proportion of patients being readmitted.</LI>
+<LI>When grouped by age, the percentage of patients being readmitted was not significantly related to LOS, though younger patients did tend to have a shorter LOS and were less likely to be readmitted to the hospital.</LI><br>
 
 ---
 
-### Conclusions
-In summary, my analysis of the data found the following:
+### Main Findings
 
-1. India had the highest number of unique loan IDs and St. Kitts and Nevis had the least.
-2. The PEACE in Ukraine project had the highest loan amount.
-3. St. Kitts and Nevis had the highest service charge.
-4. Most loans were disbursing, repaying or disbursed.
-5. India had the highest dollar amount of cancelled debt, and Pakistan had the highest number of rows with the status as cancelled.
+1. Most patients stayed in the hospital between 1-4 days, with 3 days being the most common.
+2. A longer LOS was related to a higher number of lab procedures.
+3. Demographic groups with longer LOS tended to have more lab procedures and medications, but the number of procedures was less consistent.
+4. When grouped by race, patients who stayed in the hospital longer had a higher likelihood of being readmitted. When grouped by age, the percentage of patients being readmitted was not significantly related to LOS.
 
-I think this dataset offers opportunity for deeper investigation: How can the World Group reduce risk to avoid cancelled debt, while still providing financial support? Do interest rates on other loans within these relationships justify the amount of cancelled debt? These questions may not apply to the IDA program specifically, but I believe these are questions a regular bank working with regular borrowers would have, and would be seeking answers to.
+I think there is lots of opportunity for further investigation here, outside of what I mentioned above relating to medical specialties. When looking at this dataset, there is much we don’t know about these patients that could be affecting LOS and readmission. Are there additional factors at play that affect these key markers? Was the hospital understaffed? Are there complicating factors that require observation, and therefore a longer LOS? A patient may want to leave earlier than recommended by doctor and end up being readmitted to the hospital at a later time. Patients could have additional diagnoses or allergies that require special considerations regarding the kind of treatment given to them. And most of all: _every single person is just different_.<br><br>
+I think more data could be gathered to try to determine how socio-economic factors play a role in these as well as implicit bias within the medical system. Findings from this could potentially help improve patients' quality of care significantly, decrease turn around times and thereby decrease costs to hospitals when they don't have to readmit patients who received sub-par care.
 <br><br>
-As always, thank you for reading! Feel free to leave your thoughts or questions, or connect with me on [LinkedIn.](https://www.linkedin.com/in/megan-
+Once again, thank you so much for reading! Please reach out to connect with me on [LinkedIn](https://www.linkedin.com/in/megan-easton2/) and share your thoughts or questions about this project!
