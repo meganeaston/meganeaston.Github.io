@@ -4,9 +4,13 @@
 
 ### Check Out My Projects Below 
 
+#### [SQL - Healthcare Project](/hospital.md)
+[<img src="images/sql 2 image.png">](https://www.linkedin.com/pulse/exploring-hospital-data-sql-relationships-between-los-megan-easton-ommue/?trackingId=ZMr%2BkxKcRpe4cslv8u1hzg%3D%3D)
+In this case study from the Data Analytics Accelerator (DAA), I was asked to take a look at hospital data using SQL. I looked at relationships between length of stay, number of procedures, and readmission across demographic groups.
+
 #### [SQL - Banking Project](/bank.md)
 [<img src="images/Blue Modern Minimalist Simple Article LinkedIn Sponsored Contentsql .png">](https://www.linkedin.com/pulse/exploring-world-banking-data-bank-insights-sql-megan-easton-qe2re?)
-In this project from the Data Analytics Accelerator (DAA), I was prompted to analyze banking data from the World Bank's IDA program using SQL. I answered: How many loans does each country have?
+In this project from the DAA, I was prompted to analyze banking data from the World Bank's IDA program using SQL. I answered: How many loans does each country have?
 What is the most expensive project?
 Which countries have the highest service charge rate?
 What is the most common credit status?
