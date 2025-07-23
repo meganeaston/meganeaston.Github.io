@@ -50,25 +50,25 @@ Which gave:<br><br>
 And the following, when grouped by age:<br><br>
 <img src="images/age procedures result.png"><br><br>
 In these two tables we can see a couple interesting things:
-- African American patients had the longest average LOS and highest average number of lab procedures, but second lowest number of procedures.
-- Asian patients had the shortest average LOS, as well as the fewest average lab procedures and fewest average medications.
-- Generally, the older you are, the longer your hospital stay. The only exception was that patients aged 80-90 stayed longer than those aged 90-100.
-- When grouped by age, the number of procedures and number of medications have a bell curve, with people in middle age groups receiving the highest average amount of procedures and medications.
-- The number of lab procedures seems to be pretty similar among all age groups, but younger age groups do receive slightly fewer lab procedures on average.
-- Overall, patient groups with longer LOS tended to have more lab procedures and medications, but the number of procedures was less consistent.<br><br>
+<LI>African American patients had the longest average LOS and highest average number of lab procedures, but second lowest number of procedures.</LI>
+<LI>Asian patients had the shortest average LOS, as well as the fewest average lab procedures and fewest average medications.</LI>
+<LI>Generally, the older you are, the longer your hospital stay. The only exception was that patients aged 80-90 stayed longer than those aged 90-100.</LI>
+<LI>When grouped by age, the number of procedures and number of medications have a bell curve, with people in middle age groups receiving the highest average amount of procedures and medications.</LI>
+<LI>The number of lab procedures seems to be pretty similar among all age groups, but younger age groups do receive slightly fewer lab procedures on average.</LI>
+<LI>Overall, patient groups with longer LOS tended to have more lab procedures and medications, but the number of procedures was less consistent.</LI><br><br>
 Next, looking at the tables focusing on readmission:<br><br>
 <img src="images/age readmitted code.png"><br><br>
 Which yielded:<br><br>
 <img src="images/Age readmitted result.png"><br><br>
 And the following, when grouped by race:<br><br>
-<img src="images/race readmitted rsult.png">
+<img src="images/race readmitted rsult.png"><br><br>
 From these two tables I was able to make some more observations:<br><br>
   <LI>Younger age groups generally have a higher percentage of patients not readmitted, but they also have a smaller sample size compared to middle and older age groups.</LI>
   <LI>Patients aged 20-30 had the highest percentage readmitted within 30 days, and patients aged 80-90 had the highest percentage readmitted after 30 days.</LI>
   <LI>Caucasian patients had the highest percentage readmitted (both within 30 days and after 30 days), as well as the largest sample size</LI>
-<LI>Asian patients had the highest percentage not readmitted, as well as the second lowest percentage readmitted within 30 days and lowest percentage readmitted after 30 days. They were also the smallest sample size.</LI>
-<LI>When grouped by race, patients who stayed longer had a higher likelihood of being readmitted. However, this could be a sample size issue as larger sample sizes had longer LOS and a higher proportion of patients being readmitted.</LI>
-<LI>When grouped by age, the percentage of patients being readmitted was not significantly related to LOS, though younger patients did tend to have a shorter LOS and were less likely to be readmitted to the hospital.</LI><br><br>
+  <LI>Asian patients had the highest percentage not readmitted, as well as the second lowest percentage readmitted within 30 days and lowest percentage readmitted after 30 days. They were also the smallest sample size.</LI>
+  <LI>When grouped by race, patients who stayed longer had a higher likelihood of being readmitted. However, this could be a sample size issue as larger sample sizes had longer LOS and a higher proportion of patients being readmitted.</LI>
+  <LI>When grouped by age, the percentage of patients being readmitted was not significantly related to LOS, though younger patients did tend to have a shorter LOS and were less likely to be readmitted to the hospital.</LI><br><br>
 To finish things up, I used CONCAT to create a written summary that showed patients with the highest number of lab procedures first. <br><br>
 <img src="images/concat code.png"><br>
 <img src="images/concat result.png">
