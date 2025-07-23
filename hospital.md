@@ -68,7 +68,10 @@ From these two tables I was able to make some more observations:<br><br>
   <LI>Caucasian patients had the highest percentage readmitted (both within 30 days and after 30 days), as well as the largest sample size</LI>
 <LI>Asian patients had the highest percentage not readmitted, as well as the second lowest percentage readmitted within 30 days and lowest percentage readmitted after 30 days. They were also the smallest sample size.</LI>
 <LI>When grouped by race, patients who stayed longer had a higher likelihood of being readmitted. However, this could be a sample size issue as larger sample sizes had longer LOS and a higher proportion of patients being readmitted.</LI>
-<LI>When grouped by age, the percentage of patients being readmitted was not significantly related to LOS, though younger patients did tend to have a shorter LOS and were less likely to be readmitted to the hospital.</LI><br>
+<LI>When grouped by age, the percentage of patients being readmitted was not significantly related to LOS, though younger patients did tend to have a shorter LOS and were less likely to be readmitted to the hospital.</LI><br><br>
+To finish things up, I used CONCAT to create a written summary that showed patients with the highest number of lab procedures first. <br><br>
+<img src="images/concat code.png"><br>
+<img src="images/concat result.png">
 
 ---
 
