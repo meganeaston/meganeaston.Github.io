@@ -5,7 +5,7 @@
 ### Check Out My Projects Below 
 
 #### [Tableau - Basketball Visualization](https://public.tableau.com/app/profile/megan.easton/viz/BasketballViz_17526055364670/NBAVizStory)
-[<img src="">](https://public.tableau.com/app/profile/megan.easton/viz/BasketballViz_17526055364670/NBAVizStory)
+[<img src="images/Basketball visual.png">](https://public.tableau.com/app/profile/megan.easton/viz/BasketballViz_17526055364670/NBAVizStory)
 In this project, I used historical NBA data to visualize insights about various player metrics across all teams.
 
 #### [SQL - Healthcare Project](/hospital.md)
