@@ -4,6 +4,10 @@
 
 ### Check Out My Projects Below 
 
+#### [Tableau - Basketball Visualization](https://public.tableau.com/app/profile/megan.easton/viz/BasketballViz_17526055364670/NBAVizStory)
+[<img src="">](https://public.tableau.com/app/profile/megan.easton/viz/BasketballViz_17526055364670/NBAVizStory)
+In this project, I used historical NBA data to visualize insights about various player metrics across all teams.
+
 #### [SQL - Healthcare Project](/hospital.md)
 [<img src="images/sql 2 image.png">](https://www.linkedin.com/pulse/exploring-hospital-data-sql-relationships-between-los-megan-easton-ommue/?trackingId=ZMr%2BkxKcRpe4cslv8u1hzg%3D%3D)
 In this case study from the Data Analytics Accelerator (DAA), I was asked to take a look at hospital data using SQL. I looked at relationships between length of stay, number of procedures, and readmission across demographic groups.
